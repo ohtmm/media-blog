@@ -18,6 +18,12 @@
   --translucent-black: #00000099;
 }
 
+img {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
 li {
   list-style: none;
   padding-left: 0;
@@ -59,13 +65,12 @@ body {
 
 .banner {
   background-color: tra;
-  border-bottom: 1px solid var(--bg-accent-color);
-  text-align: center;
-  box-shadow: 5px 10px 30px 10px black;
+  text-align: left;
 }
 
 .banner__title {
-  margin: 20px;
+  margin: 1rem 1rem 3rem 0rem;
+  font-size: 8rem;
   color: var(--accent-color);
 }
 
@@ -75,28 +80,40 @@ body {
   justify-content: center;
 }
 
+.create-button:hover {
+  transform: scale(1.2);
+  font-weight: 700;
+  color: black;
+  background: var(--accent-color);
+}
 .create-button {
-  margin: 0.1em 1em;
+  margin: 0.1rem 2rem;
   text-align: center;
   user-select: none;
-  padding: 1em 3em;
+  padding: 0.5rem 3rem;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 0.8rem;
-  color: black;
-  background-color: var(--accent-color);
-  border-radius: 20px;
+  font-size: 18px;
+  color: var(--accent-color);
+  background-color: black;
   border: none;
+  border-right: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
+  border-radius: 1rem;
+  cursor: pointer;
+  outline: none;
 }
 
 .document {
   height: 100%;
   overflow-y: auto;
-  background-color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  color: white;
   /* Firefox */
   scrollbar-width: 6px;
   scrollbar-color: var(--bg-accent-color);
   scrollbar-face-color: var(--accent-color);
+  border-radius: 20px;
 }
 
 .document::-webkit-scrollbar {
