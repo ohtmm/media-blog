@@ -1,15 +1,14 @@
-export class ImageComponent {
-  private element: HTMLElement;
+import { BaseComponent } from '../../component.js';
+
+export class ImageComponent extends BaseComponent<HTMLElement> {
   constructor(url: string, alt: string) {
-    const template = document.createElement('template');
-    template.innerHTML = `<section class="image__box">
-    <div class="imgae__holder">
-      <img class="image__thumbnail" />
-      <p class="image__title">
-      </p>
-    </div>
-  </section>`;
-    this.element = template.content.firstElementChild! as HTMLElement;
+    super(`<section class="image__box">
+              <div class="imgae__holder">
+               <img class="image__thumbnail" />
+               <p class="image__title">
+               </p>
+               </div>
+          </section>`);
 
     const imageElement = this.element.querySelector(
       '.image__thumbnail'
@@ -21,9 +20,5 @@ export class ImageComponent {
       '.image__title'
     )! as HTMLParagraphElement;
     titleElement.textContent = alt;
-  }
-
-  attactTo(parent: HTMLElement, position: InsertPosition = 'beforeend') {
-    parent.insertAdjacentElement(position, this.element);
   }
 }

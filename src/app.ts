@@ -5,10 +5,10 @@ class App {
   private page: PageComponent;
   private image: ImageComponent;
   constructor(appRoot: HTMLElement) {
-    this.page = new PageComponent('this is first page');
+    this.page = new PageComponent();
     this.page.attachTo(appRoot);
-    this.image = new ImageComponent('./../assets/hands.jpg', 'hands');
-    this.image.attactTo(appRoot);
+    this.image = new ImageComponent('https://picsum.photos/200/300', 'sample');
+    this.image.attachTo(appRoot);
   }
 }
 
